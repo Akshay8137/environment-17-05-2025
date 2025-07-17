@@ -15,8 +15,6 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Validate the syntax
-      env:
-       state: karnataka
       run: mvn validate
 
     - name: Do a clean Package and install
