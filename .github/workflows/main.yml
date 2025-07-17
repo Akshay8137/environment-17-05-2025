@@ -1,0 +1,32 @@
+
+name: Build Java File
+
+on:
+  push:
+    branches: [ main ]
+env:
+ NAME: AKSHAY
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      Age: fifty
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Validate the syntax
+      env:
+       state: karnataka
+      run: mvn validate
+
+    - name: Do a clean Package and install
+      run: mvn clean install
+      
+    - name: List the build artifact
+      run: ls /target
+      
+    - name: echo step
+      run: echo " print name $NAME",
+           echo " print name $Age",
+          echo " print name $state",
+      
